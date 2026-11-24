@@ -1190,8 +1190,15 @@ function addRaceExtras(scene){
 function render3D(dt){
   const D=race.dist,cam=R3.camera,me=S.me,mm=R3.horses[S.runners.indexOf(me)];
   if(R3.gate&&S.started)R3.gate.children.forEach(c=>{if(c.userData.door&&c.rotation.x>-1.5)c.rotation.x-=dt*6});
-  S.runners.forEach((r,i)=>{const m=R3.horses[i],u=T.uf-D+r.d,p=pointAt(u,laneOff(r.lane));
-    m.g.position.set(p[0],0,p[1]);m.g.rotation.y=heading(u)+(r.tLane-r.lane)*.1*lateralSign(u);
+  // drawn positions follow the simulation through a light spring: lane changes ease in and out, a bumped
+  // horse slides over instead of jumping, and friends' horses in a match glide between network updates
+  S.runners.forEach((r,i)=>{const m=R3.horses[i];
+    if(m.vd===undefined||S.replay||dt<=0||Math.abs(r.d-m.vd)>8){m.vd=r.d;m.vl=r.lane;m.lv=0;m.yaw=0}
+    else{m.vd+=r.v*dt;m.vd+=(r.d-m.vd)*Math.min(1,dt*8);
+      const h=Math.min(dt,.05);m.lv+=(64*(r.lane-m.vl)-16*m.lv)*h;m.vl+=m.lv*h;   // critically damped: sideways speed ramps up and down
+      const latV=m.lv*LANE_M;m.yaw+=(Math.atan2(latV,Math.max(4,r.v))-m.yaw)*Math.min(1,dt*6)}
+    const u=T.uf-D+m.vd,p=pointAt(u,laneOff(m.vl));
+    m.g.position.set(p[0],0,p[1]);m.g.rotation.y=heading(u)+m.yaw*lateralSign(u);
     animHorse(m,S.started&&S.t>=r.react?r.v:0,dt,r)});
   if(S.replay){replayCamera(dt);return}
   const jock=R3.view===0;
