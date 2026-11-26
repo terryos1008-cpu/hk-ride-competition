@@ -258,25 +258,164 @@ tr.fr td{background:rgba(40,120,200,.14)}
 .mp-race{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
 .mp-race select{background:var(--turf);color:var(--cream);border:1px solid var(--line);border-radius:6px;padding:7px 10px;font:inherit;max-width:100%}
 @media (max-width:700px){.pace button{font-size:12px}.full{display:none}}
+/* ---- club look: deep green, brass gold, serif headings ---- */
+:root{--gold:#d9b25f;--gold-2:#f0d48f;--gold-line:rgba(217,178,95,.35);--panel:#112a20}
+body{background:radial-gradient(1200px 500px at 50% -120px,#1d4232 0,transparent 70%),#0b2018}
+[id$="View"],#cardSec,#spSlot{scroll-margin-top:84px}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px 22px;flex-wrap:wrap;margin:-20px calc(-1*max(16px,env(safe-area-inset-left,0px))) 0;padding:10px max(16px,env(safe-area-inset-left,0px));
+  background:rgba(8,24,18,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--gold-line)}
+.brand{display:flex;align-items:center;gap:10px;background:none;border:0;padding:0;color:var(--gold);text-align:left}
+.emblem{width:42px;height:42px;flex:none}
+.wordmark{font-family:var(--f-display);font-weight:900;font-size:20px;letter-spacing:.06em;color:var(--gold-2);line-height:1.1}
+.wordmark small{display:block;font-family:var(--f-num);font-weight:700;font-size:10px;letter-spacing:.3em;color:var(--gold)}
+.tabs{flex:1;justify-content:flex-end;border:0;padding:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;border:0;border-radius:0;background:none;padding:8px 10px;font-size:14px;color:var(--muted);border-bottom:2px solid transparent}
+.tabs button:hover{color:var(--cream)}
+.tabs button[aria-pressed="true"]{background:none;color:var(--gold-2);border-bottom-color:var(--gold)}
+@media (max-width:760px){.tabs{flex-basis:100%;justify-content:flex-start}}
+.eyebrow.gold{color:var(--gold)}
+.pane-h,.card-title{color:var(--gold-2)}
+.cta{background:linear-gradient(180deg,var(--gold-2),var(--gold));color:#241a06;border-radius:4px;box-shadow:0 1px 0 rgba(255,255,255,.3) inset,0 6px 18px rgba(0,0,0,.35)}
+.cta:disabled{opacity:.45;cursor:not-allowed}
+.race-row{border-radius:6px;background:var(--panel);border-color:var(--gold-line)}
+.race-row[aria-pressed="true"]{border-color:var(--gold);background:rgba(217,178,95,.12)}
+.home{display:flex;flex-direction:column;gap:22px}
+.hero2{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:22px;align-items:stretch}
+@media (max-width:820px){.hero2{grid-template-columns:1fr}}
+.hero2-txt{display:flex;flex-direction:column;gap:12px;justify-content:center}
+.hero2 h1{margin:0;font-family:var(--f-display);font-weight:900;font-size:clamp(34px,6vw,58px);line-height:1.1;color:var(--cream);text-wrap:balance}
+.hero2 p{margin:0;color:var(--muted);max-width:34em}
+.hero2-stats{display:flex;flex-wrap:wrap;gap:8px 22px}
+.hero2-stats div{display:flex;flex-direction:column}
+.hero2-stats b{font-family:var(--f-num);font-size:30px;font-weight:800;color:var(--gold-2);line-height:1}
+.hero2-stats span{font-size:12px;color:var(--muted)}
+.tonight{position:relative;display:flex;flex-direction:column;gap:8px;padding:20px 22px;border:1px solid var(--gold-line);border-radius:8px;
+  background:linear-gradient(160deg,rgba(217,178,95,.12),rgba(217,178,95,0) 55%),var(--panel);box-shadow:0 0 0 4px rgba(217,178,95,.06)}
+.tonight .badge{align-self:flex-start;font-family:var(--f-num);font-weight:800;letter-spacing:.1em;font-size:12px;color:#241a06;background:var(--gold);border-radius:3px;padding:2px 8px}
+.tonight h3{margin:0;font-family:var(--f-display);font-weight:900;font-size:26px;color:var(--gold-2)}
+.tonight .meta{color:var(--muted);font-size:13px}
+.tonight p{margin:0;font-size:14px}
+.tonight .cta{align-self:flex-start;margin-top:6px}
+.sec-h{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--gold-line);padding-bottom:8px}
+.sec-h h2{margin:0;font-family:var(--f-display);font-weight:900;font-size:24px;color:var(--cream)}
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:12px}
+.game{display:flex;align-items:center;gap:14px;text-align:left;background:var(--panel);border:1px solid var(--gold-line);border-radius:8px;padding:16px;min-width:0;transition:border-color .15s,transform .15s}
+.game:hover{border-color:var(--gold);transform:translateY(-1px)}
+.gicon{flex:none;width:58px;height:58px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(160deg,#1f4a37,#0f2a1f);border:1px solid var(--gold-line)}
+.gicon svg{width:34px;height:34px;fill:none;stroke:var(--gold-2);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.game.hot .gicon{background:linear-gradient(160deg,#5a3d12,#2a1d08)}
+.gtxt{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.gtxt b{font-family:var(--f-display);font-weight:900;font-size:20px;color:var(--gold-2)}
+.gtxt>span:last-child{font-size:13px;color:var(--muted)}
+.game .eyebrow{font-size:11px}
+.game.hot .eyebrow{color:var(--gold)}
+.game .go{flex:none;color:var(--gold)}
+/* 攪局 */
+.slot{border:1px solid var(--gold-line);border-radius:8px;padding:18px;background:var(--panel)}
+.slot-box{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.reel{min-width:min(100%,280px);flex:1;max-width:420px;text-align:center;font-family:var(--f-display);font-weight:900;font-size:34px;padding:14px 10px;border-radius:6px;
+  background:linear-gradient(180deg,#1a1408,#3a2c10 50%,#1a1408);color:var(--gold-2);border:2px solid var(--gold);box-shadow:inset 0 0 18px rgba(0,0,0,.7)}
+.reel.stop{color:#fff;text-shadow:0 0 14px rgba(240,212,143,.8)}
+.sp-card{display:flex;flex-direction:column;gap:4px}
+.sp-name{font-family:var(--f-display);font-size:28px;color:var(--gold-2)}
+.sp-en{font-family:var(--f-num);letter-spacing:.08em;color:var(--muted)}
+.stars{color:var(--gold-2);letter-spacing:.05em}
+.race-row.spoiled{border-color:var(--gold)}
+.sp-ok{color:var(--gold-2)!important;font-weight:700}
+/* 夢幻 */
+.dr-pool{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;max-height:460px;overflow-y:auto;padding-right:4px}
+.dr-h{display:flex;flex-direction:column;align-items:flex-start;gap:1px;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:8px 12px;min-width:0}
+.dr-h b{font-family:var(--f-display);font-size:17px}
+.dr-h span{font-size:12px;color:var(--muted)}
+.dr-h[aria-pressed="true"]{border-color:var(--gold);background:rgba(217,178,95,.14)}
+.dr-h[aria-pressed="true"] b{color:var(--gold-2)}
+.mode-banner{border:1px solid var(--gold);background:rgba(217,178,95,.1);border-radius:6px;padding:10px 14px}
+.mode-banner b{color:var(--gold-2)}
 </style>
 </head>
 <body>
 
 
 <div class="wrap">
-  <header class="hero">
-    <h1>港馬我嚟騎<small>HONG KONG · I RIDE THIS ONE</small></h1>
-    <p>跑馬地夜賽，騎師視角 3D。揀一場真實錦標賽、揀一匹真實參賽馬，睇你騎唔騎得出比當晚更好嘅成績；或者同朋友一齊跑。</p>
+  <header class="topbar">
+    <button class="brand" data-tab="home" aria-label="首頁">
+      <svg class="emblem" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+        <path d="M20 44c0-12 5-21 12-21s12 9 12 21" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="20.5" cy="38" r="1.6" fill="currentColor"/><circle cx="43.5" cy="38" r="1.6" fill="currentColor"/><circle cx="21.5" cy="31" r="1.6" fill="currentColor"/><circle cx="42.5" cy="31" r="1.6" fill="currentColor"/>
+        <path d="M27 18l5-6 5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span class="wordmark">港馬我嚟騎<small>HAPPY VALLEY · I RIDE</small></span>
+    </button>
+    <nav class="tabs" id="tabs" aria-label="玩法">
+      <button data-tab="home" aria-pressed="true">首頁</button>
+      <button data-tab="solo">錦標賽</button>
+      <button data-tab="legend">名駒挑戰</button>
+      <button data-tab="spoil">攪局騎師</button>
+      <button data-tab="dream">夢幻賽事</button>
+      <button data-tab="quiz">馬柱問答</button>
+      <button data-tab="mp">朋友對戰</button>
+    </nav>
   </header>
-  <nav class="tabs" id="tabs" aria-label="玩法">
-    <button data-tab="solo" aria-pressed="true">錦標賽</button>
-    <button data-tab="legend">名駒挑戰</button>
-    <button data-tab="quiz">馬柱問答</button>
-    <button data-tab="mp">朋友對戰</button>
-  </nav>
+
+  <section id="homeView" class="home">
+    <div class="hero2">
+      <div class="hero2-txt">
+        <span class="eyebrow gold">跑馬地夜賽 · 騎師視角 3D</span>
+        <h1>真實賽事，你嚟騎。</h1>
+        <p>跑馬地真實賽果、真實參賽馬、真實檔位同跑法。由騎師視角跑一次，睇吓你騎唔騎得出比當晚更好嘅成績。免費，唔使登記。</p>
+        <div class="hero2-stats" id="homeStats"></div>
+      </div>
+      <div class="tonight" id="tonight"></div>
+    </div>
+    <div class="sec-h"><span class="eyebrow gold">GAMES</span><h2>玩法</h2></div>
+    <div class="games">
+      <button class="game" data-tab="solo"><span class="gicon"><svg viewBox="0 0 48 48"><path d="M15 8h18v8a9 9 0 0 1-18 0z"/><path d="M15 11H9v3a6 6 0 0 0 6 6M33 11h6v3a6 6 0 0 1-6 6M24 25v8M17 40h14M19 33h10v7H19z"/></svg></span>
+        <span class="gtxt"><span class="eyebrow">RIDE THE CARD</span><b>錦標賽</b><span>揀一場跑馬地真實賽事、揀一匹真實參賽馬，用當晚檔位同負磅出閘。</span></span><span class="go">▶</span></button>
+      <button class="game" data-tab="legend"><span class="gicon"><svg viewBox="0 0 48 48"><circle cx="24" cy="20" r="10"/><path d="M24 14l1.8 3.8 4.1.5-3 2.8.8 4.1-3.7-2-3.7 2 .8-4.1-3-2.8 4.1-.5zM18 29l-4 12 6-3 4 5 0-14M30 29l4 12-6-3-4 5"/></svg></span>
+        <span class="gtxt"><span class="eyebrow">LEGEND RUN</span><b>名駒挑戰</b><span>同一匹馬嘅幾場真實賽事，逐場用返當晚條件贏晒佢，攞全勝證書。</span></span><span class="go">▶</span></button>
+      <button class="game hot" data-tab="spoil"><span class="gicon"><svg viewBox="0 0 48 48"><rect x="7" y="12" width="34" height="24" rx="4"/><path d="M17 12v24M31 12v24M41 18h3v10"/><path d="M10 27l3-6 3 6M21 21h6l-4 7M34 21h5l-3 7"/></svg></span>
+        <span class="gtxt"><span class="eyebrow">SPOIL THE NIGHT · 新</span><b>攪局騎師</b><span>拉霸抽一匹其他場次嘅馬，插入一場真實賽事。衝線快過當晚頭馬，就改寫咗歷史。</span></span><span class="go">▶</span></button>
+      <button class="game hot" data-tab="dream"><span class="gicon"><svg viewBox="0 0 48 48"><path d="M6 38h36M10 38V20M18 38V20M26 38V20M34 38V20M42 38V20M8 20h36"/><path d="M14 10l1.2 2.6 2.8.3-2.1 1.9.6 2.8-2.5-1.4-2.5 1.4.6-2.8-2.1-1.9 2.8-.3zM34 8l1 2.1 2.3.3-1.7 1.6.4 2.2-2-1.1-2 1.1.4-2.2-1.7-1.6 2.3-.3z"/></svg></span>
+        <span class="gtxt"><span class="eyebrow">DREAM FIELD · 新</span><b>夢幻賽事</b><span>將唔同晚、唔同班次嘅馬放入同一個閘。自己揀陣容，結果每次都唔同。</span></span><span class="go">▶</span></button>
+      <button class="game" data-tab="quiz"><span class="gicon"><svg viewBox="0 0 48 48"><rect x="10" y="7" width="28" height="34" rx="3"/><path d="M15 15h18M15 21h18M15 27h10"/><path d="M30 29a4 4 0 1 1 5 3.9V35M35 38.5v.5"/></svg></span>
+        <span class="gtxt"><span class="eyebrow">WHO IS IT?</span><b>馬柱問答</b><span>遮住馬名嘅馬柱，估吓係邊匹。每日一題，亦可以一直玩落去。</span></span><span class="go">▶</span></button>
+      <button class="game" data-tab="mp"><span class="gicon"><svg viewBox="0 0 48 48"><path d="M8 30a9 9 0 0 1 18 0v2H8zM22 30a9 9 0 0 1 18 0v2H22z"/><path d="M8 30h4M36 30h4M17 21v-3M31 21v-3"/></svg></span>
+        <span class="gtxt"><span class="eyebrow">RIDE WITH FRIENDS</span><b>朋友對戰</b><span>開房、分享房號，同朋友喺同一場賽事一齊跑。</span></span><span class="go">▶</span></button>
+    </div>
+  </section>
+
+  <section id="spoilView" hidden>
+    <div class="pane">
+      <span class="eyebrow gold">SPOIL THE NIGHT</span>
+      <h2 class="pane-h">攪局騎師</h2>
+      <p class="pane-p">揀一場真實賽事，拉霸抽一匹其他場次嘅馬插入去。其他馬用返當晚檔位同實力，你要衝線快過當晚頭馬。抽中嘅馬實力按佢自己最好一場嘅時間，換算到呢場嘅距離同場地。</p>
+      <div class="races" id="spRaces"></div>
+    </div>
+    <div class="pane slot" id="spSlot" hidden>
+      <h3 class="card-title" id="spTitle"></h3>
+      <div class="slot-box"><div class="reel" id="spReel">？</div><button class="cta" id="spSpin">拉霸</button></div>
+      <div class="sp-card" id="spCard"></div>
+      <div class="cta-row"><button class="cta" id="spGo" disabled>入閘 ▶</button><span class="pane-p">入閘之前可以再拉過。</span></div>
+    </div>
+  </section>
+
+  <section id="dreamView" hidden>
+    <div class="pane">
+      <span class="eyebrow gold">DREAM FIELD</span>
+      <h2 class="pane-h">夢幻賽事</h2>
+      <p class="pane-p">唔同晚、唔同班次嘅馬同場跑。實力按每匹馬最好一場嘅時間換算；未跑過呢個距離嘅馬會蝕少少。揀好陣容就入排位表揀你騎邊匹。</p>
+      <div class="opts">
+        <div class="opt"><span class="opt-k">距離</span><div class="seg" id="drDist"></div></div>
+        <div class="opt"><span class="opt-k">場地</span><div class="seg" id="drGoing"></div></div>
+        <div class="opt"><span class="opt-k">陣容</span><button class="ghost sm" data-preset="winners">全部頭馬</button><button class="ghost sm" data-preset="top">最強 12 匹</button><button class="ghost sm" data-preset="rand">隨機 12 匹</button><span class="opt-d" id="drCount"></span></div>
+      </div>
+      <div class="dr-pool" id="drPool"></div>
+      <div class="cta-row"><button class="cta" id="drGo" disabled>排位表 ▶</button></div>
+    </div>
+  </section>
+
 
   <section id="pickView" style="display:flex;flex-direction:column;gap:22px">
-    <div class="pane">
+    <div class="pane" id="racesPane">
       <h2 class="pane-h">揀場錦標賽</h2>
       <p class="pane-p">全部係跑馬地真實賽事，參賽馬、檔位、負磅同跑法都係跟返當日賽果。</p>
       <div class="races" id="races"></div>
@@ -424,7 +563,7 @@ tr.fr td{background:rgba(40,120,200,.14)}
     <img id="photo" alt="頭馬相" hidden>
     <img id="cert" alt="全勝證書" hidden>
     <div class="card-wrap"><table>
-      <thead><tr><th>名次</th><th>馬號</th><th>馬名</th><th>檔位</th><th>負磅</th><th>頭馬距離</th><th>完成時間</th><th>最後600米</th><th>沿途走位</th><th>真實名次</th></tr></thead>
+      <thead><tr><th>名次</th><th>馬號</th><th>馬名</th><th>檔位</th><th>負磅</th><th>頭馬距離</th><th>完成時間</th><th>最後600米</th><th>沿途走位</th><th id="realTh">真實名次</th></tr></thead>
       <tbody id="resBody"></tbody>
     </table></div>
   </section>
@@ -531,19 +670,23 @@ function renderOpts(){
   $("diffSeg").innerHTML=DIFFS.map((d,i)=>`<button data-d="${i}" aria-pressed="${i===diff}">${d.n}</button>`).join("");
   $("diffDesc").textContent=DIFFS[diff].d;
   document.querySelectorAll("#todSeg [data-t]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.t===tod));
-  $("condSel").innerHTML=CONDS.map(c=>`<option value="${c.id}"${c.id===condId?" selected":""}>${c.id==="real"?`當晚真實場地（${race.going}）`:c.label}</option>`).join("");
+  $("condSel").innerHTML=CONDS.map(c=>`<option value="${c.id}"${c.id===condId?" selected":""}>${c.id==="real"?(race.kind==="dream"?`${race.going}（夢幻賽事設定）`:`當晚真實場地（${race.going}）`):c.label}</option>`).join("");
   $("condTip").textContent="場地提示："+condFor(race,condId).tip;
-  $("drawNote").textContent=mods?"而家用緊重新抽過嘅檔位同狀態":"而家用緊當晚真實檔位";
-  $("realDrawBtn").hidden=!mods;
+  $("drawNote").textContent=race.kind==="dream"?"檔位抽籤決定":race.kind==="spoil"?"其他馬用返當晚檔位；你嘅檔位抽籤決定":mods?"而家用緊重新抽過嘅檔位同狀態":"而家用緊當晚真實檔位";
+  $("realDrawBtn").hidden=!mods||race.kind==="dream";$("redrawBtn").hidden=race.kind==="spoil";
 }
 function renderCard(){
   const rec=loadRec()[race.id]||{};
-  $("cardTitle").textContent=race.name;
-  $("cardSub").textContent=`${race.date.replace(/-/g,"/")} · 跑馬地 第${race.no}場 · ${race.cls}（${race.band}）· ${race.dist}米 · 草地「${race.course}」賽道 · 當晚場地：${race.going} · ${race.rows.length}匹`;
-  $("legendBanner").hidden=mode!=="legend";
-  if(mode==="legend"&&legendHorse)$("legendBanner").innerHTML=`<b>名駒挑戰</b>：${legendHorse.cn}（${legendHorse.en}）。當晚真實名次：第${field.find(h=>h.no===pickNo)?.place??"?"}名。<button class="ghost sm" id="legendBack">◀ 返回名駒挑戰</button>`;
+  $("cardTitle").textContent=race.name;$("racesPane").hidden=mode!=="solo";
+  if(race.kind==="dream")$("cardSub").textContent=`跑馬地 · ${race.dist}米 · 草地「${race.course}」賽道 · ${race.going} · ${race.rows.length}匹 · 唔同晚嘅馬同場較量，號碼按實力排（1號最強）`;
+  else if(race.kind==="spoil")$("cardSub").textContent=`${race.date.replace(/-/g,"/")} · 跑馬地 第${race.no}場 · ${race.dist}米 · ${race.going} · 當晚 ${race.rows.length-1} 匹 ＋ 你抽中嘅 ${race.inserted}號`;
+  else $("cardSub").textContent=`${race.date.replace(/-/g,"/")} · 跑馬地 第${race.no}場 · ${race.cls}（${race.band}）· ${race.dist}米 · 草地「${race.course}」賽道 · 當晚場地：${race.going} · ${race.rows.length}匹`;
+  $("legendBanner").hidden=mode==="solo";
+  if(mode==="spoil")$("legendBanner").innerHTML=`<b>攪局騎師</b>：你騎 ${race.inserted}號 ${esc(SP.x.cn)}（${fromWhere(race.src)}）。目標：衝線快過當晚頭馬 ${race.realWinNo}號 ${race.realWinName}（${race.realWinTime}）。<button class="ghost sm" id="modeBack" data-back="spoil">◀ 返回攪局騎師</button>`;
+  else if(mode==="dream")$("legendBanner").innerHTML=`<b>夢幻賽事</b>：撳一匹馬嚟騎。每匹馬下面寫住佢嚟自邊一晚。<button class="ghost sm" id="modeBack" data-back="dream">◀ 改陣容</button>`;
+  else if(mode==="legend"&&legendHorse)$("legendBanner").innerHTML=`<b>名駒挑戰</b>：${legendHorse.cn}（${legendHorse.en}）。當晚真實名次：第${field.find(h=>h.no===pickNo)?.place??"?"}名。<button class="ghost sm" id="legendBack">◀ 返回名駒挑戰</button>`;
   const cols=field.slice().sort((a,b)=>b.no-a.no);
-  $("card").innerHTML=cols.map(h=>`<button class="col" data-no="${h.no}" aria-pressed="${h.no===pickNo}"${mode==="legend"&&h.no!==pickNo?" disabled":""}>
+  $("card").innerHTML=cols.map(h=>`<button class="col" data-no="${h.no}" aria-pressed="${h.no===pickNo}"${(mode==="legend"||mode==="spoil")&&h.no!==pickNo?" disabled":""}>
     <span class="draw" title="檔位">${h.draw}檔</span>
     <span class="hno num">${h.no}</span>
     <span class="cap" style="background:radial-gradient(circle at 50% 50%,${h.silk[1]} 0 32%,${h.silk[0]} 34%)"></span>
@@ -551,12 +694,13 @@ function renderCard(){
     <span class="vstyle">${h.style}</span>
     <span class="wt num">${h.wt}磅</span>
     <span class="form f-${h.form}">${h.form}</span>
+    ${race.kind==="dream"&&race.srcs?`<span class="wt" title="${esc(fromWhere(race.srcs[h.no]))}">${race.srcs[h.no].race.dist}米</span>`:""}
     ${rec[h.no]?'<span class="won">★</span>':''}
     ${h.no===pickNo?'<span class="stamp">我騎</span>':''}
   </button>`).join("");
   const h=field.find(x=>x.no===pickNo);
   $("goBtn").disabled=!h;
-  $("pickInfo").textContent=h?`${h.no}號 ${h.name}（${h.en}）· 第${h.draw}檔 · ${h.wt}磅 · 跑法：${h.style} · 狀態：${h.form} · 當晚沿途走位 ${h.run}`:"撳一隻馬嚟騎";
+  $("pickInfo").textContent=h?`${h.no}號 ${h.name}（${h.en}）· 第${h.draw}檔 · ${h.wt}磅 · 跑法：${h.style} · 狀態：${h.form}`+(race.kind==="dream"?` · 嚟自 ${fromWhere(race.srcs[h.no])}`:race.kind==="spoil"&&h.no===race.inserted?` · 嚟自 ${fromWhere(race.src)}`:` · 當晚沿途走位 ${h.run}`):"撳一隻馬嚟騎";
   const pb=loadPB();$("pbInfo").textContent=pb?`你喺呢場（${DIFFS[diff].n}）嘅個人最佳：第${pb.pos}名，${fmtT(pb.t)}`:"";
   renderOpts();
 }
@@ -574,7 +718,7 @@ $("condSel").addEventListener("change",e=>{condId=e.target.value;renderOpts()});
 $("todSeg").addEventListener("click",e=>{const b=e.target.closest("[data-t]");if(!b)return;tod=b.dataset.t;try{localStorage.setItem("hkride.tod",tod)}catch(x){}renderOpts()});
 $("redrawBtn").addEventListener("click",()=>{redraw();renderCard()});
 $("realDrawBtn").addEventListener("click",()=>{mods=null;resetField();renderCard()});
-$("legendBanner").addEventListener("click",e=>{if(e.target.id==="legendBack")showTab("legend")});
+$("legendBanner").addEventListener("click",e=>{if(e.target.id==="legendBack")showTab("legend");else if(e.target.id==="modeBack")showTab(e.target.dataset.back)});
 
 // ================= track geometry =================
 let T;
@@ -609,7 +753,7 @@ const CONDS=[
 ];
 let condId="real",tod="night";try{tod=localStorage.getItem("hkride.tod")||"night"}catch(e){}
 function condFor(r,id){const c=CONDS.find(x=>x.id===id)||CONDS[0],going=c.going||r.going,G=GOING[going];
-  const label=c.id==="real"?`當晚真實場地（${r.going}）`:c.label;
+  const label=c.id==="real"?(r.kind==="dream"?`跑馬地・${r.going}`:`當晚真實場地（${r.going}）`):c.label;
   const tips=[];
   if(going==="好地至快地")tips.push("地快，前面嘅馬唔易停，位置要靠前。");
   if(going==="好黏地"||going==="黏地"||going==="軟地")tips.push("地爛食體力，唔好太早催谷，留多啲力衝線；後上馬較難追。");
@@ -709,13 +853,13 @@ function newState(playerNo,opt){
 function setHumanReact(r){const p=S.rand;r.react=(r.pace>=2?.03+p()*.12:.1+p()*.28)+(p()<.05?.3:0)}
 // headless batch simulator for balancing (all horses AI-ridden, or a scripted player)
 function simulate(id,n,policy){
-  const keep=[race,field,T,S,pickNo];race=HV_RACES.find(r=>r.id===id);resetField();T=makeTrack(race);const runs=[];
+  const keep=[race,field,T,S,pickNo];race=typeof id==="object"?id:HV_RACES.find(r=>r.id===id);resetField();T=makeTrack(race);const runs=[];
   for(let k=0;k<n;k++){S=newState(policy?policy.no:null);if(S.me)setHumanReact(S.me);
     while(S.t<400&&S.runners.some(r=>r.ft===null)){if(policy&&S.me.ft===null)policy.act(S.me,race.dist-S.me.d,S);step(1/30)}
     runs.push(ranking().map(r=>({no:r.no,real:r.h.place,style:r.h.style,draw:r.draw,ft:r.ft,me:r.me,st:r.stats})))}
   [race,field,T,S,pickNo]=keep;return runs;
 }
-window.__hk={simulate,TUNE,setPace:(d,v)=>{DRAIN=d;PACEV=v},HV_RACES,moveLaneFor:(r,d)=>{const L=Math.round(r.tLane)+d;if(L>=0&&L<=MAXLANE&&laneFree(r,L))r.tLane=L},whip,setDiff:d=>{diff=d},setCond:c=>{condId=c},get R3(){return R3},get S(){return S}};
+window.__hk={simulate,modes:()=>({POOL,spoilRace,dreamRace,figAt,PAR}),TUNE,setPace:(d,v)=>{DRAIN=d;PACEV=v},HV_RACES,moveLaneFor:(r,d)=>{const L=Math.round(r.tLane)+d;if(L>=0&&L<=MAXLANE&&laneFree(r,L))r.tLane=L},whip,setDiff:d=>{diff=d},setCond:c=>{condId=c},get R3(){return R3},get S(){return S}};
 // The player may steer anywhere. Shifting into a horse = interference, logged for the stewards.
 function checkContact(me,dir){
   for(const o of S.runners){if(o===me||o.ft!==null)continue;
@@ -1489,12 +1633,13 @@ function togglePause(force){if(!S||S.replay||!S.started&&force!==true)return;if(
   S.paused=force===undefined?!S.paused:force;$("pauseBox").hidden=!S.paused;if(S.paused)applyQuality();last=performance.now()}
 $("pauseBtn").onclick=()=>togglePause();$("resumeBtn").onclick=()=>togglePause(false);
 $("restartBtn").onclick=()=>{S.paused=false;startRace()};
-$("quitBtn").onclick=()=>{cancelAnimationFrame(raf);AU.stop();S.paused=false;showTab(mode==="legend"?"legend":"solo")};
+$("quitBtn").onclick=()=>{cancelAnimationFrame(raf);AU.stop();S.paused=false;showTab(modeTab())};
 document.addEventListener("visibilitychange",()=>{if(document.hidden&&S&&!S.replay&&!S.mp&&!$("raceView").hidden&&S.started&&S.me.ft===null)togglePause(true)});
 
 // ================= result & analysis =================
 function marginText(m){const L=m/2.4;if(L<.04)return"鼻位";if(L<.12)return"短頭位";if(L<.22)return"頭位";if(L<.38)return"頸位";
   if(L>=10)return Math.round(L)+"";const q=Math.round(L*4)/4,w=Math.floor(q),f=q-w,fs=f===.25?"1/4":f===.5?"1/2":f===.75?"3/4":"";return w?(fs?`${w}-${fs}`:`${w}`):fs}
+function marginWords(m){const t=marginText(m);return/位$/.test(t)?t:t+" 個馬位"}
 function fmtT(t){if(t==null)return"—";const m=Math.floor(t/60),s=t-m*60;return`${m}:${s<10?"0":""}${s.toFixed(2)}`}
 let lastOrd=null;
 function finish(){
@@ -1527,8 +1672,9 @@ function finish(){
       `裁決：受干擾馬匹本身未能跑得更前，<b>維持原判</b>（第${rawPos}名）${diff===0&&(inquiry.total>=4)?"（簡單難度唔會取消資格）":""}。`}</p>`}
   // headline vs the real result
   const real=me.h.place,realWin=field.find(h=>h.place===1),realDraws=!mods;
+  $("realTh").textContent=race.kind==="dream"?"原場名次":"真實名次";
   const cmp=me.dq?"":realDraws?(real-pos>0?`比當晚真實賽果（第${real}名）好 ${real-pos} 個名次！`:real-pos<0?`當晚真實賽果係第${real}名。`:`同當晚真實賽果一樣，第${real}名。`):"（今次用咗重新抽過嘅檔位同狀態）";
-  $("resLine").textContent=(me.dq?"":won?`以 ${marginText((ord[1].ft-win.ft)*16.5)} 勝出，時間 ${fmtT(me.ft)}。`:`頭馬 ${horseLabel(win)}（${fmtT(win.ft)}），你輸 ${marginText((me.ft-win.ft)*16.5)}。`)+cmp+`當晚真實頭馬：${realWin.name}（${realWin.time}）。`;
+  $("resLine").textContent=race.kind==="spoil"?(me.dq?"取消資格，攪局失敗。":spoilLine(ord,me)+(!won&&win.no!==race.realWinNo?`今次頭馬係 ${horseLabel(win)}（${fmtT(win.ft)}）。`:won?`仲以 ${marginWords((ord[1].ft-win.ft)*16.5)} 贏埋頭馬，時間 ${fmtT(me.ft)}。`:"")):(me.dq?"":won?`以 ${marginWords((ord[1].ft-win.ft)*16.5)} 勝出，時間 ${fmtT(me.ft)}。`:`頭馬 ${horseLabel(win)}（${fmtT(win.ft)}），你輸 ${marginWords((me.ft-win.ft)*16.5)}。`)+(race.kind==="dream"?"夢幻賽事：每次跑結果都可能唔同。":race.kind==="spoil"?spoilLine(ord,me):cmp+`當晚真實頭馬：${realWin.name}（${realWin.time}）。`);
   // personal best
   const pbB=$("pbBadge");pbB.hidden=true;
   if(!me.dq&&!S.mp){const old=loadPB();if(!old||pos<old.pos||(pos===old.pos&&me.ft<old.t)){try{localStorage.setItem(pbKey(),JSON.stringify({pos,t:me.ft}))}catch(e){}
@@ -1577,11 +1723,17 @@ function finish(){
   if(won){const rec=loadRec();rec[race.id]=rec[race.id]||{};rec[race.id][me.h.no]=1;saveRec(rec);
     try{img.src=winPhoto(me,ord[1],shot);img.hidden=false}catch(e){}
     if(mode==="legend"&&legendHorse&&!S.mp)legendWin()}
+  if(race.kind==="spoil"&&spoiled(ord,me))spoilWin();
+  if(race.kind==="spoil")v.textContent=me.dq?`${me.h.name}，取消資格`:spoiled(ord,me)?(won?"攪局成功，仲贏埋頭馬！":`攪局成功！第${pos}名`):`歷史冇被改寫 · 第${pos}名`;
+  if(race.kind==="spoil"&&spoiled(ord,me))v.className="verdict win";
   $("againBtn").hidden=!!S.mp;$("backBtn").hidden=!!S.mp;$("roomBtn").hidden=!S.mp;
-  $("againBtn").textContent=mode==="legend"?"再挑戰一次":"同一班對手再跑";
+  $("againBtn").textContent=mode==="legend"||mode==="spoil"?"再挑戰一次":mode==="dream"?"同一個陣容再跑":"同一班對手再跑";
   $("resultView").scrollIntoView({behavior:"smooth",block:"start"});
   if(S.mp)MP.afterRace();
 }
+function spoiled(ord,me){const rw=S.runners.find(r=>r.no===race.realWinNo);return!me.dq&&rw&&ord.indexOf(me)<ord.indexOf(rw)}
+function spoilLine(ord,me){const rw=S.runners.find(r=>r.no===race.realWinNo);if(!rw)return"";
+  return spoiled(ord,me)?`你衝線快過當晚頭馬 ${rw.no}號 ${rw.h.name} ${marginWords((rw.ft-me.ft)*16.5)}，歷史改寫咗！`:`當晚頭馬 ${rw.no}號 ${rw.h.name} 仍然跑贏你 ${marginWords((me.ft-rw.ft)*16.5)}（佢今次第${ord.indexOf(rw)+1}名）。`}
 function winPhoto(me,second,glCanvas){
   const c=document.createElement("canvas");c.width=960;c.height=600;const x=c.getContext("2d");
   x.fillStyle="#0a1d17";x.fillRect(0,0,960,600);
@@ -1596,8 +1748,8 @@ function winPhoto(me,second,glCanvas){
   x.fillStyle="#d8d2c0";x.font="500 24px 'Noto Sans TC',sans-serif";x.fillText(`策騎：你 · 難度${DIFFS[diff].n} · ${new Date().toLocaleDateString("zh-HK")}`,480,540);
   return c.toDataURL("image/jpeg",.9);
 }
-$("againBtn").onclick=()=>{if(mode!=="legend")redraw();startRace()};
-$("backBtn").onclick=()=>showTab(mode==="legend"?"legend":"solo");
+$("againBtn").onclick=()=>{if(mode==="solo"||mode==="dream")redraw();startRace()};
+$("backBtn").onclick=()=>showTab(modeTab());
 $("roomBtn").onclick=()=>{showTab("mp");MP.backToLobby()};
 $("replayBtn").onclick=()=>startReplay();
 
@@ -1651,6 +1803,89 @@ function legendWin(){const L=loadLegend(),x=legendHorse;L[x.en]=L[x.en]||{};L[x.
     g.font="500 20px 'Noto Sans TC',sans-serif";g.fillText(`跑馬地 · 港馬我嚟騎 · ${new Date().toLocaleDateString("zh-HK")}`,450,540);
     $("cert").src=c.toDataURL("image/jpeg",.92);$("cert").hidden=false}}
 
+// ================= cross-race ratings (攪局騎師 / 夢幻賽事) =================
+// Each run's speed, adjusted for going, against a Happy Valley par for its distance (fitted to these results).
+const PAR=d=>18.68-.00121*d;
+const ftime=t=>{const m=Math.floor(t/60),s=t-m*60;return`${m}:${s<10?"0":""}${s.toFixed(2)}`};
+const POOL=(()=>{const m={};for(const r of HV_RACES)for(const row of r.rows){const en=row[3],fig=r.dist/secs(row[8])/GOING[r.going].v/PAR(r.dist);
+    (m[en]=m[en]||{en,cn:row[2],runs:[]}).runs.push({race:r,row,fig})}
+  const all=Object.values(m);for(const x of all){x.best=x.runs.reduce((a,b)=>b.fig>a.fig?b:a);x.fig=x.best.fig}
+  return all.sort((a,b)=>b.fig-a.fig)})();
+// ability at distance D: its best run, less a little per doubling of distance away from what it has run
+function figAt(x,D){let f=0;for(const q of x.runs)f=Math.max(f,q.fig*(1-.012*Math.abs(Math.log2(D/q.race.dist))));return f}
+function timeAt(x,base){return base.dist/(figAt(x,base.dist)*PAR(base.dist)*GOING[base.going].v)}
+// a running line rescaled to a field of n
+function runFor(src,n){const on=src.race.rows.length;return src.row[7].split(" ").map(Number).map(v=>Math.max(1,Math.min(n,Math.round(v*n/on)))).join(" ")}
+function fromWhere(src){return`${src.race.date.replace(/-/g,"/")} ${src.race.short} 第${src.row[0]}名`}
+// 攪局騎師: the real field of one race, plus one horse from another night
+function spoilRace(base,x,rand){
+  const n=base.rows.length+1,src=x.best,draw=1+Math.floor(rand()*n),no=n;
+  const rows=base.rows.map(r=>{const c=r.slice();if(c[5]>=draw)c[5]++;return c});
+  rows.push(["—",no,x.cn,x.en,src.row[4],draw,"",runFor(src,n),ftime(timeAt(x,base))]);
+  rows.sort((a,b)=>secs(a[8])-secs(b[8]));
+  const winner=base.rows.find(r=>r[0]===1);
+  return{...base,id:`spoil-${base.id}`,kind:"spoil",rows,n,name:`攪局：${base.short}`,short:base.short,src,inserted:no,realWinNo:winner[1],realWinName:winner[2],realWinTime:winner[8]}}
+// 夢幻賽事: horses from different nights in one race; numbers by ability (1 = best), draws by ballot
+function dreamRace(base,xs,rand){
+  const n=xs.length,draws=xs.map((_,i)=>i+1);for(let i=n-1;i>0;i--){const j=Math.floor(rand()*(i+1));[draws[i],draws[j]]=[draws[j],draws[i]]}
+  const order=xs.slice().sort((a,b)=>figAt(b,base.dist)-figAt(a,base.dist));
+  const rows=order.map((x,i)=>[x.best.row[0],i+1,x.cn,x.en,x.best.row[4],draws[i],"",runFor(x.best,n),ftime(timeAt(x,base))]);
+  rows.sort((a,b)=>secs(a[8])-secs(b[8]));
+  return{...base,id:`dream-${base.dist}-${base.going}`,kind:"dream",rows,n,name:`夢幻賽事 · 跑馬地 ${base.dist}米`,short:`夢幻賽事 ${base.dist}米`,cls:"夢幻",band:"跨場",srcs:Object.fromEntries(order.map((x,i)=>[i+1,x.best]))}}
+function stars(f,lo,hi){const k=Math.max(0,Math.min(1,(f-lo)/Math.max(.001,hi-lo)));return"★".repeat(1+Math.round(k*4))+"☆".repeat(4-Math.round(k*4))}
+
+// ================= 攪局騎師 =================
+const SP={base:null,x:null,spinning:false};
+function loadSpoil(){try{return JSON.parse(localStorage.getItem("hkride.spoil"))||{}}catch(e){return{}}}
+function renderSpoil(){
+  const done=loadSpoil();
+  $("spRaces").innerHTML=HV_RACES.map(r=>{const w=r.rows.find(x=>x[0]===1),ok=done[r.id];
+    return`<button class="race-row${ok?" spoiled":""}" data-id="${r.id}" aria-pressed="${SP.base===r}"><b>${r.short}</b><span>${r.date.replace(/-/g,"/")} · ${r.dist}米 · ${r.cls} · 當晚頭馬：${w[2]}（${w[8]}）</span>${ok?`<span class="sp-ok">已攪局 ✓ ${esc(ok.join("、"))}</span>`:""}</button>`}).join("");
+  $("spSlot").hidden=!SP.base;
+  if(!SP.base)return;
+  const w=SP.base.rows.find(x=>x[0]===1);
+  $("spTitle").textContent=`${SP.base.short}：要跑贏 ${w[2]}`;
+  const figs=SP.base.rows.map(r=>POOL.find(p=>p.en===r[3])).map(p=>figAt(p,SP.base.dist)),lo=Math.min(...figs),hi=Math.max(...figs);
+  if(SP.x){const f=figAt(SP.x,SP.base.dist);
+    $("spCard").innerHTML=`<span class="eyebrow">抽中</span><b class="sp-name">${SP.x.cn}</b><span class="sp-en">${SP.x.en}</span>
+      <span>${fromWhere(SP.x.best)} · ${SP.x.best.race.dist}米 · 跑法 ${styleOf(SP.x.best.row[7],SP.x.best.race.rows.length)}</span>
+      <span>喺呢班馬入面嘅實力：<b class="stars">${stars(f,lo,hi)}</b>${f>hi?"（快過當晚頭馬！）":f<lo?"（呢班入面最弱）":""}</span>`}
+  else $("spCard").innerHTML=`<span class="pane-p">撳「拉霸」抽一隻其他場次嘅馬，插入呢場同當晚嘅馬一齊跑。</span>`;
+  $("spGo").disabled=!SP.x||SP.spinning;$("spSpin").disabled=SP.spinning;
+}
+function spinSpoil(){
+  if(SP.spinning||!SP.base)return;SP.spinning=true;SP.x=null;renderSpoil();
+  const pool=POOL.filter(p=>!p.runs.some(q=>q.race===SP.base)),pick=pool[Math.floor(Math.random()*pool.length)],reel=$("spReel");
+  let k=0,t=0;const total=26;
+  const tick=()=>{k++;const p=k>=total?pick:pool[Math.floor(Math.random()*pool.length)];reel.textContent=p.cn;reel.classList.toggle("stop",k>=total);
+    if(typeof AU!=="undefined"&&AU.tick)AU.tick();
+    if(k<total){t=40+k*k*.55;setTimeout(tick,t)}else{SP.x=pick;SP.spinning=false;renderSpoil()}};
+  tick()}
+function goSpoil(){
+  if(!SP.x)return;mode="spoil";legendHorse=null;mods=null;race=spoilRace(SP.base,SP.x,Math.random);resetField();pickNo=race.inserted;
+  showSection("pickView");renderRaces();renderCard();$("cardSec").scrollIntoView({behavior:"smooth",block:"start"})}
+function spoilWin(){const d=loadSpoil(),id=race.id.replace("spoil-","");d[id]=d[id]||[];if(!d[id].includes(SP.x.cn))d[id].push(SP.x.cn);try{localStorage.setItem("hkride.spoil",JSON.stringify(d))}catch(e){}}
+
+// ================= 夢幻賽事 =================
+const DREAM={dist:1650,sel:new Set(),going:"好地"};
+const DREAM_DISTS=[...new Set(HV_RACES.map(r=>r.dist))].sort((a,b)=>a-b);
+function dreamBase(){const b=HV_RACES.find(r=>r.dist===DREAM.dist);return{...b,going:DREAM.going}}
+function dreamPreset(k){const s=DREAM.sel;s.clear();
+  if(k==="winners"){for(const r of HV_RACES)s.add(r.rows.find(x=>x[0]===1)[3]);for(const p of POOL){if(s.size>=12)break;s.add(p.en)}}
+  else if(k==="top"){POOL.slice().sort((a,b)=>figAt(b,DREAM.dist)-figAt(a,DREAM.dist)).slice(0,12).forEach(p=>s.add(p.en))}
+  else{const a=POOL.slice().sort(()=>Math.random()-.5);a.slice(0,12).forEach(p=>s.add(p.en))}}
+function renderDream(){
+  $("drDist").innerHTML=DREAM_DISTS.map(d=>`<button data-dd="${d}" aria-pressed="${d===DREAM.dist}">${d}米</button>`).join("");
+  $("drGoing").innerHTML=Object.keys(GOING).map(g=>`<button data-dg="${g}" aria-pressed="${g===DREAM.going}">${g}</button>`).join("");
+  const list=POOL.slice().sort((a,b)=>figAt(b,DREAM.dist)-figAt(a,DREAM.dist)),lo=figAt(list[list.length-1],DREAM.dist),hi=figAt(list[0],DREAM.dist);
+  $("drPool").innerHTML=list.map(p=>`<button class="dr-h" data-en="${esc(p.en)}" aria-pressed="${DREAM.sel.has(p.en)}"><b>${p.cn}</b><span class="stars">${stars(figAt(p,DREAM.dist),lo,hi)}</span><span>${fromWhere(p.best)} · ${p.best.race.dist}米</span></button>`).join("");
+  const n=DREAM.sel.size;$("drCount").textContent=`已揀 ${n} 匹（4 至 14 匹）`;$("drGo").disabled=n<4||n>14;
+}
+function goDream(){
+  const xs=POOL.filter(p=>DREAM.sel.has(p.en));if(xs.length<4)return;
+  mode="dream";legendHorse=null;mods=null;condId="real";race=dreamRace(dreamBase(),xs,Math.random);resetField();pickNo=null;
+  showSection("pickView");renderRaces();renderCard();$("cardSec").scrollIntoView({behavior:"smooth",block:"start"})}
+
 // ================= 馬柱問答 =================
 const QUIZ_POOL=(()=>{const m={};for(const r of HV_RACES)for(const row of r.rows){const en=row[3];(m[en]=m[en]||{en,cn:row[2],runs:[]}).runs.push({race:r,row})}return Object.values(m)})();
 const QUIZ_NAMES=[...new Set(QUIZ_POOL.map(x=>x.cn))].sort((a,b)=>a.localeCompare(b,"zh-Hant"));
@@ -1684,15 +1919,31 @@ $("quizBox").addEventListener("click",e=>{const b=e.target.closest("button");if(
 $("quizBox").addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.id==="qzA")quizAnswer(e.target.value)});
 
 // ================= tabs / sections =================
-const SECTIONS=["pickView","legendView","quizView","mpView","raceView","resultView"];
-function showSection(id){for(const s of SECTIONS)$(s).hidden=s!==id;$("tabs").hidden=id==="raceView"}
+const SECTIONS=["homeView","pickView","legendView","spoilView","dreamView","quizView","mpView","raceView","resultView"];
+function showSection(id){for(const s of SECTIONS)$(s).hidden=s!==id;document.querySelector(".topbar").hidden=id==="raceView";if(id!=="raceView")scrollTo({top:0})}
 function setTabBtn(t){document.querySelectorAll("#tabs [data-tab]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.tab===t))}
+function modeTab(){return mode==="legend"||mode==="spoil"||mode==="dream"?mode:"solo"}
 function showTab(t){setTabBtn(t);
-  if(t==="solo"){if(mode==="legend"){mode="solo";legendHorse=null}showSection("pickView");renderRaces();renderCard()}
+  if(t==="home"){showSection("homeView");renderHome()}
+  else if(t==="solo"){if(mode!=="solo"){mode="solo";legendHorse=null;mods=null;if(race.kind){race=HV_RACES[3];pickNo=null}resetField()}showSection("pickView");renderRaces();renderCard()}
+  else if(t==="spoil"){showSection("spoilView");renderSpoil()}
+  else if(t==="dream"){if(!DREAM.sel.size)dreamPreset("winners");showSection("dreamView");renderDream()}
   else if(t==="legend"){showSection("legendView");renderLegend()}
   else if(t==="quiz"){showSection("quizView");renderQuiz()}
   else if(t==="mp"){showSection("mpView");MP.render()}}
-$("tabs").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(b)showTab(b.dataset.tab)});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(b)showTab(b.dataset.tab)});
+function renderHome(){
+  const nH=POOL.length;$("homeStats").innerHTML=`<div><b>${HV_RACES.length}</b><span>場真實賽事</span></div><div><b>${nH}</b><span>匹真實參賽馬</span></div><div><b>6</b><span>種玩法</span></div>`;
+  const d=new Date(),r=HV_RACES[hashStr(`${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`)%HV_RACES.length],w=r.rows.find(x=>x[0]===1);
+  $("tonight").innerHTML=`<span class="badge">今晚精選</span><h3>${r.short}</h3><span class="meta">${r.date.replace(/-/g,"/")} · 跑馬地 第${r.no}場 · ${r.dist}米 · ${r.cls} · ${r.going} · ${r.rows.length}匹</span>
+    <p>當晚頭馬 <b>${w[2]}</b>（第${w[5]}檔，${w[8]}）。換你上馬，用當晚嘅檔位同對手再跑一次。</p><button class="cta" id="tonightGo" data-id="${r.id}">我嚟騎 ▶</button>`}
+$("tonight").addEventListener("click",e=>{const b=e.target.closest("#tonightGo");if(b){showTab("solo");pickRace(b.dataset.id)}});
+$("spRaces").addEventListener("click",e=>{const b=e.target.closest(".race-row");if(!b||SP.spinning)return;SP.base=HV_RACES.find(r=>r.id===b.dataset.id);SP.x=null;$("spReel").textContent="？";$("spReel").classList.remove("stop");renderSpoil();$("spSlot").scrollIntoView({behavior:"smooth",block:"center"})});
+$("spSpin").addEventListener("click",spinSpoil);$("spGo").addEventListener("click",goSpoil);
+$("dreamView").addEventListener("click",e=>{const t=e.target.closest("[data-dd],[data-dg],[data-preset],.dr-h,#drGo");if(!t)return;
+  if(t.dataset.dd)DREAM.dist=+t.dataset.dd;else if(t.dataset.dg)DREAM.going=t.dataset.dg;else if(t.dataset.preset)dreamPreset(t.dataset.preset);
+  else if(t.id==="drGo"){goDream();return}else{const en=t.dataset.en;if(DREAM.sel.has(en))DREAM.sel.delete(en);else if(DREAM.sel.size<14)DREAM.sel.add(en)}
+  renderDream()});
 
 // ================= 朋友對戰 (live room: everyone's horse travels in presence; the host runs the AI field) =================
 // Local testing without claude.ai: a BroadcastChannel stand-in with the same calls (only on localhost).
@@ -1776,7 +2027,7 @@ const MP={room:null,g:null,code:"",name:"",status:"",lastEp:0,pk:{},sendT:0,meNo
     try{this.g=await r.join("hv-"+code)}catch(e){const c=e&&e.code;this.status=c==="not_permitted"?"你嘅帳戶喺呢度唔可以用對戰房。":c==="no_peerjs"?"載入唔到連線元件，檢查吓網絡再試。":c==="network"||c==="server-error"||c==="socket-error"||c==="timeout"?"連唔到連線伺服器，可能係網絡擋咗，轉用手機數據或者屋企 Wi-Fi 再試。":"入唔到房，稍後再試。";this.g=null;return this.render()}
     this.code=code;this.status="";this.lastEp=0;
     const base={nm,hz:null,rdy:false,host:!!asHost};
-    if(asHost)base.g={ph:"lobby",rid:race.id,cid:"real",df:1,ep:0,seed:0,pl:{},nm:{}};
+    if(asHost)base.g={ph:"lobby",rid:(race.kind?HV_RACES[3]:race).id,cid:"real",df:1,ep:0,seed:0,pl:{},nm:{}};
     await this.g.presence(base);
     this.unsub=this.g.onPeers(()=>this.onPeers());
     this.render();
@@ -1786,7 +2037,7 @@ const MP={room:null,g:null,code:"",name:"",status:"",lastEp:0,pk:{},sendT:0,meNo
   setGame(patch){const g={...(this.game()||{}),...patch};this.set({g})},
   onPeers(){
     // nobody hosting any more? the lowest peer label takes over
-    if(this.g&&!this.host()){const ps=this.players().sort((a,b)=>a.peer<b.peer?-1:1);if(ps[0]&&ps[0].isMe&&ps[0].sameTab&&!this.hostTakeT){this.hostTakeT=setTimeout(()=>{this.hostTakeT=0;if(!this.host())this.set({host:true,g:{ph:"lobby",rid:race.id,cid:"real",df:1,ep:this.lastEp,seed:0,pl:{},nm:{}}})},2500)}}
+    if(this.g&&!this.host()){const ps=this.players().sort((a,b)=>a.peer<b.peer?-1:1);if(ps[0]&&ps[0].isMe&&ps[0].sameTab&&!this.hostTakeT){this.hostTakeT=setTimeout(()=>{this.hostTakeT=0;if(!this.host())this.set({host:true,g:{ph:"lobby",rid:(race.kind?HV_RACES[3]:race).id,cid:"real",df:1,ep:this.lastEp,seed:0,pl:{},nm:{}}})},2500)}}
     const g=this.game(),me=this.myPeer();
     if(g&&g.ph==="race"&&g.ep!==this.lastEp&&g.pl&&g.pl[me]!=null){this.lastEp=g.ep;this.startMatch(g);return}
     if(!$("mpView").hidden)this.render();
@@ -1874,7 +2125,7 @@ $("mpBox").addEventListener("change",e=>MP.change(e));
 $("mpBox").addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.id==="mpCode")MP.join(e.target.value,false)});
 
 // ---------- start ----------
-renderRaces();renderCard();showTab("solo");
+renderRaces();renderCard();showTab("home");
 
 })();
 </script>
